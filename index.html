@@ -1,0 +1,873 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="reveal/dist/reset.css">
+		<link rel="stylesheet" href="reveal/dist/reveal.css">
+		<link rel="stylesheet" href="reveal/dist/theme/black.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="reveal/plugin/highlight/monokai.css">
+	</head>
+	<body>
+
+
+
+
+
+
+
+
+
+
+
+ <div class="reveal">
+    <div class="slides">
+      <!-- Título: Apuntes -->
+      <section>
+        <h1>Apuntes sobre Aplicaciones Web Dinámicas</h1>
+        <p>Celia y Lucas</p>
+      </section>
+
+
+      <section data-background="https://i.kym-cdn.com/photos/images/original/001/430/367/007.gif">
+      </section>
+     <!-- Diapositivas Verticales: Información del navegador -->
+      <section>
+        <!-- Diapositiva Padre -->
+        <section>
+          <h2>Intro a aplicaciones Web con Java</h2>
+      <p>Breve historia, definición e importancia de las aplicaciones web.</p>
+          <p></p>
+        </section>
+
+        <!-- Diapositivas Hijas (Verticales) -->
+
+<section>
+  <h3>Evolución de las Aplicaciones Web</h3>
+  <p>Las aplicaciones web han evolucionado desde simples páginas HTML estáticas, ofreciendo contenido fijo, a complejas aplicaciones dinámicas capaces de proporcionar experiencias personalizadas a los usuarios. La introducción de <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/AJAX">AJAX</a> a principios de los 2000 marcó un punto de inflexión, permitiendo desarrollos web más interactivos y reactivos.</p>
+</section>
+
+<section>
+  <h3>Aplicaciones Web Estáticas</h3>
+  <p>Las aplicaciones web estáticas sirven contenido fijo a todos los usuarios. Están construidas principalmente con <a href="https://developer.mozilla.org/en-US/docs/Web/HTML">HTML</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a>, y <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">JavaScript</a> básico. Son rápidas, seguras y fáciles de desplegar, ideales para sitios informativos, blogs y portafolios.</p>
+  <p>Se pueden construir a mano y/o usando frameworks y librerías.</p>
+</section>
+
+<section>
+  <h3>Aplicaciones Web Dinámicas</h3>
+  <p>A diferencia de las estáticas, las aplicaciones web dinámicas generan contenido en tiempo real basado en las interacciones del usuario. En el contexto de Java, se utilizan tecnologías como <a href="https://javaee.github.io/servlet-spec/">Servlets</a>, <a href="https://www.oracle.com/java/technologies/jspt.html">JavaServer Pages (JSP)</a>, y frameworks como <a href="https://spring.io/">Spring</a> y <a href="https://github.com/jakartaee/faces">JavaServer Faces (JSF)</a> para manejar la lógica del lado del servidor.</p>
+</section>
+
+<section>
+  <h3>Aplicaciones Web Dinámicas</h3>
+  <p>Estas tecnologías permiten desarrollar aplicaciones web robustas y escalables que pueden gestionar complejas transacciones y dinámicas de usuario. Del lado del cliente, también se pueden integrar con tecnologías como <a href="https://angular.io/">Angular</a>, <a href="https://reactjs.org/">React</a>, <a href="https://vuejs.org/">Vue.js</a> y <a href="https://lit.dev/">Lit</a> para crear interfaces de usuario ricas e interactivas.</p>
+</section>
+
+<section>
+  <h3>Importancia de las Aplicaciones Web</h3>
+  <p>Las aplicaciones web son fundamentales en la era digital, impulsando el comercio electrónico, las redes sociales, y plataformas de servicios. Su capacidad para ofrecer contenido dinámico y personalizado, accesible desde cualquier dispositivo con acceso a internet, ha transformado la manera en que interactuamos con la tecnología.</p>
+</section>
+
+<section>
+  <h3>Uso de Eclipse para el Desarrollo Web</h3>
+  <p>En el transcurso de esta presentación, empezaremos usando el servidor tomcat a pelo y luego lo integraremos en Eclipse, un entorno de desarrollo integrado (IDE) ampliamente utilizado. Crearemos varias aplicaciones web, comenzando con una página web estática sencilla hasta llegar a aplicaciones web dinámicas más complejas.</p>
+</section>
+
+
+      </section>
+
+ 
+  </section>
+      
+
+      <section data-background="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExaHY4NmRsbjk3bmwxMWVnODI5ZW1wZ2U4Y3VsbThsM3d2eGFpbXdjdSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o7bukJD4xvmxg6xZ6/giphy.gif">
+      </section>
+
+      <!-- Diapositivas Verticales: Información del tomcat -->
+  <section>
+        <section>
+          <h2>Tomcat</h2>
+          <p>El servidor que ejecuta y sirve nuestra aplicación web. Los entresijos</p>
+        </section>
+
+
+
+<section>
+  <h3>Instalación de Tomcat</h3>
+  <small>
+  <ol>
+    <li>Descargar Tomcat desde <a href="https://tomcat.apache.org/download-90.cgi">el sitio web oficial</a>.</li>
+    <li>Extraer el contenido en una carpeta de tu elección.</li>
+    <li>Esta carpeta será el directorio raíz de Tomcat para tus operaciones.</li>
+  </ol>
+</small>
+ </section>
+
+<section>
+  <h3>Preparar la Aplicación Web</h3>
+  <p>Asegúrate de que tu aplicación tenga la estructura adecuada y esté lista para ser empaquetada:</p>
+<small>
+  <ul>
+    <li>Directorio WEB-INF para el descriptor de la aplicación y clases.</li>
+    <li>Archivos JSP, HTML, CSS, y JavaScript en el directorio raíz o subdirectorios organizados.</li>
+  </ul>
+</small>
+</section>
+
+<section>
+  <h3>Empaquetar y Desplegar una Aplicación (WAR)</h3>
+<small>
+  <ol>
+    <li>Empaqueta tu aplicación en un archivo WAR usando la línea de comandos o herramientas como Maven/Gradle o el editor Eclipse.</li>
+    <li>Si quieres uedes usar este repositorio de <a href="https://angular.io/">github</a> preparado para ello.</li>
+    <li>Copia el archivo WAR al directorio <code>webapps/</code> de Tomcat.</li>
+    <li>Tomcat desplegará automáticamente la aplicación al iniciar o reiniciar.</li>
+  </ol>
+</small>
+</section>
+
+<section>
+  <h3></h3>
+<p>Si quieres hacer una prueba, te puedes descargar un war desde el siguiente 
+  <a href="https://angular.io/"> Repositorio Github</a>.
+</p>
+</section>
+
+<section>
+<h3>Empaquetar y Desplegar una Aplicación (WAR)</h3>
+<p>Todos los ejercicios propuestos que están en los repositorios de Github tienen una versión empaquetada como war para poder desplegarlos también en el servidor de manera manual y/o con el Manager.</p>
+</section>
+
+<section>
+  <h3>Iniciar Tomcat</h3>
+<small>
+  <ol>
+    <li>Ejecuta el script <code>startup.sh</code> (Unix/Linux) o <code>startup.bat</code> (Windows) en el directorio <code>bin/</code>.</li>
+    <li>Verifica que Tomcat esté corriendo accediendo a <code>http://localhost:8080</code>.</li>
+  </ol>
+</small>
+</section>
+
+<section>
+  <h3>Acceder a la Aplicación Desplegada</h3>
+  <p>Una vez desplegada, accede a tu aplicación web navegando a <code>http://localhost:8080/nombreDeTuAplicacion</code>, sustituyendo <code>nombreDeTuAplicacion</code> por el nombre de tu archivo WAR sin la extensión <code>.war</code>.</p>
+</section>
+
+<section>
+  <h3>Acceso a Logs del Servidor</h3>
+  <p>Los logs de Tomcat son esenciales para depurar tu aplicación:</p>
+ <small>
+  <ul>
+    <li>Encuentra los logs en el directorio <code>logs/</code> dentro de tu instalación de Tomcat.</li>
+    <li>El archivo <code>catalina.out</code> generalmente contiene toda la salida del servidor.</li>
+    <li>Utiliza herramientas de línea de comandos o editores de texto para revisar estos archivos y diagnosticar problemas.</li>
+  </ul>
+  <p>Para entornos Unix/Linux, puedes usar <code>tail -f catalina.out</code> para ver el log en tiempo real.</p>
+</small>
+</section>
+
+<section>
+  <h3>Detener Tomcat</h3>
+<small>
+  <ol>
+    <li>Ejecuta el script <code>shutdown.sh</code> (Unix/Linux) o <code>shutdown.bat</code> (Windows) en el directorio <code>bin/</code> de tu instalación de Tomcat.</li>
+    <li>Para verificar que Tomcat se ha detenido correctamente, puedes revisar los logs en el directorio <code>logs/</code>, buscando mensajes de confirmación de detención o intentar acceder nuevamente a <code>http://localhost:8080</code>. Si Tomcat se detuvo correctamente, la página no debería cargar.</li>
+  </ol>
+</small>
+</section>
+
+
+<section>
+  <h3>Documentación Oficial de Tomcat</h3>
+  <p>Para una comprensión profunda y recursos adicionales sobre Apache Tomcat, se recomienda consultar la documentación oficial:</p>
+<small>
+  <ul>
+    <li>Visita la <a href="https://tomcat.apache.org/tomcat-9.0-doc/index.html">Documentación Oficial de Tomcat 9</a> para obtener guías detalladas, configuración, y mejores prácticas.</li>
+    <li>La documentación cubre desde la instalación básica hasta conceptos avanzados de seguridad y tuning de rendimiento.</li>
+  </ul>
+</small>
+</section>
+
+<section>
+  <h3>Configuración de Tomcat mediante Archivos XML</h3>
+  <p>Apache Tomcat permite una amplia configuración mediante el uso de archivos XML. Los más importantes incluyen:</p>
+<small>
+  <ul>
+    <li><code>server.xml</code>: El archivo principal de configuración del servidor, utilizado para configurar componentes como conectores, engines, y hosts.</li>
+    <li><code>web.xml</code>: Ubicado en el directorio <code>WEB-INF/</code> de tu aplicación, define la configuración específica de la aplicación, como servlets, filtros, y listeners.</li>
+    <li><code>context.xml</code>: Define la configuración de contexto para aplicaciones web, incluyendo recursos como DataSources y JNDI.</li>
+  </ul>
+</small>
+</section>
+ <section>
+  <h3>Configuración de Tomcat mediante Archivos XML</h3>
+  <p>Editar estos archivos permite personalizar el comportamiento del servidor y las aplicaciones desplegadas en él. Se recomienda hacer backup antes de hacer cambios significativos.</p>
+  <p>Más información en la <a href="https://tomcat.apache.org/tomcat-9.0-doc/config/index.html">sección de configuración</a> de la documentación oficial de Tomcat.</p>
+</section>
+
+
+<section>
+  <h3>Configuración de Conectores en server.xml</h3>
+  <p>Los conectores en Tomcat definen cómo el servidor se comunica con el mundo exterior. A través de la configuración en <code>server.xml</code>, puedes:</p>
+<small>
+  <ul>
+    <li>Modificar el puerto HTTP/HTTPS por defecto.</li>
+    <li>Configurar SSL/TLS para mejorar la seguridad.</li>
+    <li>Ajustar parámetros de rendimiento como el tamaño del thread-pool.</li>
+  </ul>
+  <p>Estos ajustes son cruciales para el rendimiento y la seguridad de tu servidor web.</p>
+</small>
+</section>
+
+<section>
+  <h3>Configuración de Contextos en context.xml</h3>
+  <p>El archivo <code>context.xml</code> permite definir cómo Tomcat maneja las aplicaciones web individuales, incluyendo:</p>
+<small>
+  <ul>
+    <li>Gestión de recursos como JNDI DataSources para bases de datos.</li>
+    <li>Configuración de parámetros de contexto que afectan al ciclo de vida de la aplicación.</li>
+    <li>Control de opciones de despliegue como el path de la aplicación y la configuración de sesión.</li>
+  </ul>
+  <p>Personalizar el contexto de una aplicación mejora su integración con el sistema y optimiza su comportamiento.</p>
+</small>
+</section>
+
+
+<section>
+  <h3>Seguridad y Autenticación mediante web.xml</h3>
+  <p>La configuración de seguridad de las aplicaciones web se realiza en el archivo <code>web.xml</code>, permitiendo:</p>
+<small>
+  <ul>
+    <li>Definir roles y restricciones de seguridad para controlar el acceso a recursos web.</li>
+    <li>Configurar métodos de autenticación como BASIC, DIGEST, FORM, o CLIENT-CERT.</li>
+    <li>Establecer parámetros de sesión y cookies para gestionar la identificación de usuarios.</li>
+  </ul>
+  <p>Configurar adecuadamente la seguridad es fundamental para proteger la aplicación y los datos de los usuarios.</p>
+</small>
+</section>
+
+<section>
+  <h3>Optimización del Rendimiento</h3>
+  <p>A través de la modificación de archivos XML, se pueden implementar optimizaciones de rendimiento, tales como:</p>
+<small>
+  <ul>
+    <li>Ajustes de cache y timeout para conectores y contextos.</li>
+    <li>Configuración de compresión para reducir el tamaño de las respuestas HTTP.</li>
+    <li>Optimización de recursos JNDI y pools de conexiones para bases de datos.</li>
+  </ul>
+  <p>Estas optimizaciones pueden significar una mejora considerable en la capacidad de respuesta y la eficiencia de tu servidor y aplicaciones web.</p>
+</small>
+</section>
+
+ </section>
+
+
+      <section data-background="https://64.media.tumblr.com/ea1f46e5d9472bb6f7e022b79469c8b6/2fa2ba14588bd5f8-ab/s500x750/4c12a7944b0df252257cea60f3faad39f03a0b6e.gif">
+      </section>
+
+      <!-- Diapositivas Verticales: Información del navegador -->
+  <section>
+        <!-- Diapositiva Padre -->
+        <section>
+          <h2>Aplicaciones web Estáticas</h2>
+      <p>Un sencillito Hola Mundo</p>
+        </section>
+
+        <!-- Diapositivas Hijas (Verticales) -->
+<section>
+  <h3>Instalación de Eclipse y Configuración de Tomcat</h3>
+  <p>Para comenzar con el desarrollo web en Eclipse, asegúrate de tener Eclipse IDE for Enterprise Java and Web Developers instalado. Además, necesitarás un servidor como Apache Tomcat para desplegar y probar tus aplicaciones web.</p>
+  <small>
+  <ul>
+    <li>Descarga e instala Eclipse desde <a href="https://www.eclipse.org/downloads/packages/">https://www.eclipse.org/downloads/packages/</a>.</li>
+    <li>Descarga Apache Tomcat desde <a href="https://tomcat.apache.org/download-90.cgi">https://tomcat.apache.org/download-90.cgi</a>.</li>
+    <li>Extrae Tomcat en una carpeta de tu elección.</li>
+  </ul>
+  </small>
+</section>
+<section>
+  <h3>Configurando Apache Tomcat en Eclipse</h3>
+  <p>Una vez que tienes Eclipse y Tomcat listos, procede a configurar Tomcat en Eclipse.</p>
+  <small>
+  <ol>
+    <li>Abre Eclipse y ve a la vista "Servers". Si no la ves, ábrela desde Window > Show View > Servers.</li>
+    <li>Haz clic derecho en el espacio de la vista "Servers" y selecciona New > Server.</li>
+    <li>En el asistente de nuevo servidor, selecciona "Apache" > "Tomcat v9.0 Server" (o la versión que hayas descargado). Haz clic en Next.</li>
+    <li>Navega hasta la carpeta donde extrajiste Tomcat y selecciónala como la ubicación del servidor Tomcat. Haz clic en Finish.</li>
+  </ol>
+  <p>Ahora Tomcat está configurado en Eclipse y listo para usar.</p>
+  </small>
+</section>
+
+<section>
+  <h3>Creación de un Nuevo Proyecto Web Estático</h3>
+  <p>Para crear un proyecto web estático que servirá como tu "Hola Mundo":</p>
+  <small>
+  <ol>
+    <li>En Eclipse, ve a File > New > Static Web Project (si no ves esta opción, asegúrate de tener instalado el plugin de WTP).</li>
+    <li>Introduce un nombre para el proyecto, por ejemplo, "HolaMundoWeb".</li>
+    <li>Deja las demás configuraciones por defecto y finaliza el asistente.</li>
+  </ol>
+  <p>Esto creará un nuevo proyecto web estático en Eclipse.</p>
+  </small>
+</section>
+
+<section>
+  <h3>Escribiendo el Código HTML para 'Hola Mundo'</h3>
+  <p>Ahora, edita el archivo "index.html" recién creado añadiendo el siguiente código HTML:</p>
+  <pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Hola Mundo&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Hola CaracoOola&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+  </code></pre>
+  <small>
+  <p>Guarda el archivo. Ahora tienes una página web estática simple que muestra el mensaje "Hola Mundo".</p>
+  </small>
+</section>
+
+<section>
+  <h3>Visualización de tu Página Web Estática</h3>
+  <p>Para visualizar tu página web "Hola CaracoOola" en Eclipse:</p>
+  <small>
+  <ol>
+    <li>Haz clic derecho sobre el archivo "index.html".</li>
+    <li>Selecciona "Open With" y luego "Web Browser".</li>
+    <li>Eclipse abrirá una pestaña del navegador mostrando tu página web estática.</li>
+  </ol>
+  <p>¡Felicidades! Has creado y visualizado tu primera página web estática usando Eclipse.</p>
+</small>
+</section>
+
+<section>
+  <h3>Aplicación web estática usando Nuevo Proyecto Web dinámico</h3>
+  <p>También podemos utilizar la función de nuevo proyecto web dinámico para crear aplicaciones web estáticas.</p>
+  <small>
+  <ol>
+    <li>Abre Eclipse y ve a File > New > Dynamic Web Project.</li>
+    <li>Introduce un nombre para el proyecto, por ejemplo, "HolaMundoWeb".</li>
+    <li>Deja las demás opciones con sus valores predeterminados y haz clic en Finish.</li>
+  </ol>
+  </small>
+</section>
+
+<section>
+  <h3>Despliegue de la Aplicación Web en Tomcat</h3>
+  <p>Desplegar tu aplicación web en Apache Tomcat desde Eclipse es un proceso sencillo gracias a la integración del IDE con el servidor. Sigue estos pasos para desplegar y visualizar tu aplicación:</p>
+</section>
+<section>
+  <h3>Despliegue de la Aplicación Web en Tomcat</h3>
+  <small>
+  <ol>
+    <li>En Eclipse, asegúrate de que la vista "Servers" esté abierta. Si no es así, puedes abrirla desde Window > Show View > Servers.</li>
+    <li>En la vista "Servers", verás el servidor Tomcat configurado. Si el servidor no está iniciado, haz clic derecho sobre él y selecciona "Start". Esto iniciará el servidor Tomcat.</li>
+    <li>Una vez que el servidor esté corriendo, haz clic derecho sobre el proyecto web estático en el Explorador de Proyectos y selecciona "Run As" > "Run on Server".</li>
+    <li>Elige el servidor Tomcat si te pide seleccionar un servidor y haz clic en "Finish".</li>
+    <li>Eclipse desplegará tu aplicación web en Tomcat y abrirá un navegador web dentro de Eclipse mostrando tu página. Si prefieres, también puedes abrir un navegador web externo e introducir la URL de tu aplicación, que generalmente es <code>http://localhost:8080/nombreDelProyecto</code>, donde <code>nombreDelProyecto</code> es el nombre de tu proyecto web.</li>
+  </ol>
+  <p>¡Felicidades! Ahora tu aplicación web estática está corriendo en un servidor Tomcat local y puedes acceder a ella desde un navegador.</p>
+</small>
+</section>
+
+        
+      
+  </section>
+
+      <section data-background="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExOWVzbTRheGp2NnB4dTUxdDBqd201dHFsZGc3NXo5ZDhrN3dvcWNqMiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/F0yv3QMx6Mxy0YX3Xj/giphy.gif">
+      </section>
+ <section>
+        <section>
+          <h2>Aplicaciones Web Dinámicas</h2>
+          <p>¡The Gang!</p>
+        </section>
+
+
+<section>
+  <h3>Tecnologías para Aplicaciones Web Dinámicas</h3>
+  <small>
+  <p>Las aplicaciones web dinámicas permiten interacciones personalizadas con los usuarios en tiempo real. Para su desarrollo, se pueden utilizar múltiples tecnologías:</p>
+  <ul>
+    <li>Java Servlets y JavaServer Pages (JSP)</li>
+    <li>PHP</li>
+    <li>ASP.NET</li>
+    <li>JavaScript con Node.js</li>
+    <li>Frameworks como Spring (Java), Django (Python), y Ruby on Rails (Ruby)</li>
+  </ul>
+  <p>Estas tecnologías permiten al servidor generar contenido dinámico basado en las acciones y solicitudes de los usuarios.</p>
+</small>
+</section>
+
+<section>
+  <h3>Objetivos</h3>
+  <p>Por razones de compatibilidad con Tomcat en este minicurso, nos centraremos en los Servlets y las páginas JSP.</p>
+</section>
+<section>
+  <h3>Servlets</h3>
+</section>
+
+<section>
+  <h3>¿Qué son los Servlets?</h3>
+  <small>
+  <p>Los Servlets son clases Java que manejan solicitudes y respuestas en aplicaciones web. Operan en el lado del servidor para:</p>
+  <ul>
+    <li>Leer datos enviados por el usuario (formularios, cookies, etc.)</li>
+    <li>Procesar esos datos</li>
+    <li>Generar y enviar respuestas dinámicas al cliente</li>
+  </ul>
+  <p>Forman la base de muchas tecnologías Java EE, incluyendo JSP y frameworks como Spring y JSF.</p>
+</small>
+</section>
+
+<section>
+  <h3>Desarrollo de Servlets</h3>
+  <p>Para desarrollar un Servlet, se deben seguir estos pasos básicos:</p>
+<small>
+  <ol>
+    <li>Crear una clase que extienda <code>HttpServlet</code>.</li>
+    <li>Sobrescribir los métodos <code>doGet</code> o <code>doPost</code> para manejar solicitudes GET o POST.</li>
+    <li>Compilar el Servlet y desplegarlo en un contenedor de Servlets como Tomcat.</li>
+  </ol>
+  <p>Los Servlets pueden interactuar con otros componentes web, como JSP, para generar respuestas complejas.</p>
+</small>
+</section>
+
+<section>
+  <h3>Ciclo de Vida de un Servlet</h3>
+<small>
+  <p>El ciclo de vida de un Servlet comprende tres etapas principales:</p>
+  <ul>
+    <li><strong>Inicialización:</strong> El contenedor de servlets carga el servlet y llama al método <code>init()</code>.</li>
+    <li><strong>Procesamiento de Solicitudes:</strong> El contenedor invoca los métodos <code>doGet()</code>, <code>doPost()</code>, etc., según el tipo de solicitud.</li>
+    <li><strong>Finalización:</strong> El contenedor de servlets retira el servlet del servicio llamando al método <code>destroy()</code> y luego libera cualquier recurso asociado al servlet.</li>
+  </ul>
+  <p>Este ciclo permite manejar eficientemente múltiples solicitudes a lo largo de la vida útil del servlet. Nosotros apenas tocamos este aspecto de la tecnología, pero hay que conocerla.</p>
+</small>
+</section>
+
+<section>
+  <h3>Despliegue y Ejecución de Servlets</h3>
+<small>
+  <p>Para desplegar y ejecutar un Servlet en un contenedor como Tomcat, se deben realizar los siguientes pasos:</p>
+  <ol>
+    <li>Empaquetar el Servlet y cualquier recurso necesario en un archivo WAR.</li>
+    <li>Desplegar el archivo WAR en el contenedor de servlets colocándolo en el directorio <code>webapps</code>.</li>
+    <li>Configurar el servlet en el archivo <code>web.xml</code> o mediante anotaciones en el código del Servlet.</li>
+  </ol>
+  <p>Una vez desplegado, el Servlet puede manejar solicitudes enviadas a su URL mapeada.</p>
+</small>
+</section>
+
+<section>
+  <h3>Ejercicios de Servlets (básicos)</h3>
+<p>
+  En el siguiente<a href="https://angular.io/"> Repositorio de Github</a> encontrarás las intrucciones y ejemplos más detallados de como desarrollar una aplicación usando Eclipse y los Servlets.
+</p>
+</section>
+
+<section>
+  <h3>Ejercicio de Servlets (login)</h3>
+<p>
+  En el siguiente<a href="https://angular.io/"> Repositorio de Github</a> encontrarás las intrucciones y ejemplos más detallados de como desarrollar un login de usuario usando Eclipse y los Servlets.
+</p>
+</section>
+
+
+
+<section>
+  <h3>Páginas JSP</h3>
+</section>
+<section>
+  <h3>Introducción a JavaServer Pages (JSP)</h3>
+  <p>JavaServer Pages (JSP) es una tecnología que permite a los desarrolladores crear contenido web dinámico y generar páginas HTML dinámicamente. JSP se ejecuta en el servidor y combina HTML estándar con elementos Java y JSP específicos para producir páginas web que responden a las solicitudes de los usuarios.</p>
+</section>
+
+<section>
+  <h3>Características Principales de JSP</h3>
+<small>
+  <p>JSP ofrece varias características poderosas para el desarrollo web, incluyendo:</p>
+  <ul>
+    <li>Uso de etiquetas personalizadas para reutilizar componentes y simplificar el código.</li>
+    <li>Capacidad para incrustar código Java directamente en páginas HTML.</li>
+    <li>Soporte para patrones de diseño MVC (Modelo-Vista-Controlador), facilitando el desarrollo de aplicaciones web robustas y mantenibles.</li>
+    <li>Integración con tecnologías Java EE como Servlets, JDBC para acceso a bases de datos, y JNDI para acceso a recursos empresariales.</li>
+  </ul>
+</small>
+</section>
+
+<section>
+  <h3>Desarrollo de Páginas JSP</h3>
+<small>
+  <p>Crear una página JSP implica:</p>
+  <ol>
+    <li>Crear un archivo con extensión <code>.jsp</code> que contiene HTML junto con elementos JSP y código Java.</li>
+    <li>Utilizar etiquetas JSP como <code>&lt;jsp:directive&gt;</code>, <code>&lt;jsp:scriptlet&gt;</code>, y <code>&lt;jsp:expression&gt;</code> para controlar el comportamiento de la página.</li>
+    <li>Desplegar la página JSP en un contenedor de servlets/JSP como Apache Tomcat para su ejecución.</li>
+  </ol>
+  <p>Las páginas JSP simplifican el proceso de creación de contenido dinámico, permitiendo a los desarrolladores centrarse en la lógica de la aplicación.</p>
+</small>
+</section>
+
+<section>
+  <h3>Ciclo de Vida de una Página JSP</h3>
+<small>
+  <p>El ciclo de vida de una página JSP incluye:</p>
+  <ul>
+    <li><strong>Traducción:</strong> El archivo JSP se traduce a un servlet Java la primera vez que se solicita.</li>
+    <li><strong>Compilación:</strong> El servlet Java se compila en un archivo de clase ejecutable por el servidor.</li>
+    <li><strong>Ejecución:</strong> El servidor ejecuta el servlet resultante, procesando las solicitudes y generando la salida enviada al cliente.</li>
+    <li><strong>Finalización:</strong> Opcionalmente, el servlet puede ser destruido por el servidor, liberando recursos.</li>
+  </ul>
+  <p>Este proceso permite que las páginas JSP sean modificadas y actualizadas fácilmente sin necesidad de recompilar manualmente el código Java.</p>
+</small>
+</section>
+
+<section>
+  <h3>Despliegue y Ejecución de Páginas JSP</h3>
+<small>
+  <p>Para desplegar y ejecutar una página JSP:</p>
+  <ol>
+    <li>Coloca el archivo <code>.jsp</code> en el directorio web-appropriate de tu servidor (por ejemplo, el directorio <code>webapps</code> en Tomcat).</li>
+    <li>Accede a la página JSP a través de un navegador web usando la URL correspondiente al archivo JSP dentro del servidor.</li>
+    <li>El servidor procesará la página JSP, ejecutará cualquier código Java incrustado y devolverá el resultado como una página HTML al cliente.</li>
+  </ol>
+  <p>Las páginas JSP permiten una forma eficiente de crear y servir contenido web dinámico, aprovechando la potencia y la portabilidad de Java.</p>
+</small>
+</section>
+
+
+<section>
+<h3>Ejercicios de JSP (básicos)</h3>
+<p>
+  En el siguiente<a href="https://angular.io/"> Repositorio de Github</a> encontrarás las intrucciones y ejemplos más detallados de como desarrollar una aplicación usando Eclipse, Servlets y JSP.
+</p>
+</section>
+<section>
+<h3>Ejercicio de JSP (login)</h3>
+<p>
+  En el siguiente<a href="https://angular.io/"> Repositorio de Github</a> encontrarás las intrucciones y ejemplos más detallados de como desarrollar una aplicación usando Eclipse, Servlets y JSP.
+</p>
+</section>
+
+
+  </section>
+
+
+      <section data-background="https://media2.giphy.com/media/yn55b3VexZZkc/giphy.gif?cid=ecf05e47eqlwlnz4k7skuie28p271lkcswuzkx0vkd0fofev&ep=v1_gifs_related&rid=giphy.gif&ct=g">
+      </section>
+ <section>
+        <section>
+          <h2>Integración con Lit</h2>
+          <p>¡Uno más de la pandilla!</p>
+        </section>
+
+<section>
+  <h3>Integración de Lit con Aplicaciones Web Dinámicas</h3>
+  <p>Lit es una biblioteca ligera y eficiente para construir componentes web reactivos. Integrar Lit en aplicaciones web dinámicas permite crear interfaces ricas que interactúan con el servidor de manera eficaz, aprovechando las rutas de los servlets para solicitudes de datos y operaciones.</p>
+</section>
+
+<section>
+  <h3>Lit a lo bestia</h3>
+</section>
+
+<section>
+  <h3>Construcción de una Aplicación Lit</h3>
+<small>
+  <p>El proceso de construcción convierte tu código de desarrollo en una versión optimizada para producción. Para una aplicación Lit, sigue estos pasos:</p>
+  <ol>
+    <li>Utiliza herramientas de construcción como Webpack, Rollup, o Vite. Estas herramientas ayudan a empaquetar y minimizar tu código, además de resolver dependencias.</li>
+    <li>Configura tu herramienta de construcción para transpilar el código JavaScript moderno a una versión compatible con la mayoría de los navegadores.</li>
+    <li>Incluye los polyfills necesarios de Lit para asegurar la compatibilidad con navegadores que no soportan Web Components nativamente.</li>
+    <li>Ejecuta el script de construcción definido en tu <code>package.json</code>, por ejemplo, <code>npm run build</code>, para generar los archivos estáticos.</li>
+  </ol>
+  <p>Esto producirá un conjunto de archivos en tu directorio <code>dist</code> o <code>build</code>, listos para ser desplegados en el servidor.</p>
+</small>
+</section>
+
+<section>
+  <h3>Desplegando una Aplicación Lit en Tomcat</h3>
+<small>
+  <p>Una vez construida tu aplicación Lit, el siguiente paso es desplegarla en un servidor como Tomcat:</p>
+  <ol>
+    <li>Copia los archivos generados en el directorio de construcción (<code>dist</code> o <code>build</code>) a la carpeta <code>webapps</code> de tu servidor Tomcat. Dentro de <code>webapps</code>, puedes colocar tu aplicación en un subdirectorio con el nombre de tu aplicación, por ejemplo, <code>webapps/miAppLit</code>.</li>
+    <li>Reinicia Tomcat si es necesario. Algunas versiones de Tomcat detectan automáticamente los nuevos archivos y los despliegan sin necesidad de reinicio.</li>
+    <li>Accede a tu aplicación Lit navegando a <code>http://localhost:8080/miAppLit</code>.</li>
+  </ol>
+  <p>Este método te permite servir tu aplicación Lit como archivos estáticos desde Tomcat, mientras que cualquier interacción dinámica con el servidor puede manejarse a través de llamadas a APIs o servlets desde tus componentes Lit.</p>
+</small>
+</section>
+
+<section>
+<h3>Ejercicio de Lit (Tomcat)</h3>
+<p>
+  En el siguiente<a href="https://angular.io/"> Repositorio de Github</a> encontrarás las intrucciones y ejemplos más detallados de como desarrollar una aplicación usando Eclipse, Servlets y JSP.
+</p>
+</section>
+
+
+
+<section>
+  <h3>Desplegando una Aplicación Lit con Eclipse</h3>
+<small>
+  <p>Una vez construida tu aplicación Lit, el siguiente paso es desplegarla en un servidor como Tomcat:</p>
+  <ol>
+    <li>Copia los archivos generados en el directorio de construcción (<code>dist</code> o <code>build</code>) a la carpeta <code>webapps</code> de tu servidor Tomcat. Dentro de <code>webapps</code>, puedes colocar tu aplicación en un subdirectorio con el nombre de tu aplicación, por ejemplo, <code>webapps/miAppLit</code>.</li>
+    <li>Reinicia Tomcat si es necesario. Algunas versiones de Tomcat detectan automáticamente los nuevos archivos y los despliegan sin necesidad de reinicio.</li>
+    <li>Accede a tu aplicación Lit navegando a <code>http://localhost:8080/miAppLit</code>.</li>
+  </ol>
+  <p>Este método te permite servir tu aplicación Lit como archivos estáticos desde Tomcat, mientras que cualquier interacción dinámica con el servidor puede manejarse a través de llamadas a APIs o servlets desde tus componentes Lit.</p>
+</small>
+</section>
+
+<section>
+<h3>Ejercicio de Lit (Eclipse-Tomcat)</h3>
+<p>
+  En el siguiente<a href="https://angular.io/"> Repositorio de Github</a> encontrarás las intrucciones y ejemplos más detallados de como desarrollar una aplicación usando Eclipse, Servlets y JSP.
+</p>
+</section>
+
+
+<section>
+  <h3>Lit con JSP</h3>
+</section>
+
+<section>
+  <h3>Construcción de un Componente Web con Lit</h3>
+  <p>Imagina que hemos creado un componente web Lit llamado <code>mi-componente</code>, que tiene propiedades como <code>nombre</code> y <code>edad</code>. Este componente es capaz de mostrar información de usuario de manera dinámica.</p>
+</section>
+
+<section>
+  <h3>Empaquetado y Despliegue del Componente</h3>
+  <p>Una vez construido y probado, el componente <code>mi-componente</code> se empaqueta en un archivo JavaScript. Este archivo se debe incluir en la carpeta <code>webapp</code> de nuestra aplicación web, accesible para nuestras páginas JSP.</p>
+</section>
+
+<section>
+  <h3>Integración del Componente en JSP</h3>
+<small>
+  <p>Para utilizar <code>mi-componente</code> en una página JSP, incluimos el script del componente en el <code>&lt;head&gt;</code> o al final del <code>&lt;body&gt;</code> de nuestra página JSP:</p>
+</small>
+  <pre data-id="code-animation">
+  <code class="hljs javascript" data-trim data-line-numbers>
+  &lt;script src="ruta/a/mi-componente.js"&gt;&lt;/script&gt;
+  </code>
+  </pre>
+<small>
+  <p>Luego, podemos usar el componente directamente en el HTML:</p>
+</small>
+  <pre data-id="code-animation">
+  <code class="hljs javascript" data-trim data-line-numbers>
+  &lt;mi-componente nombre="John Doe" edad="30"&gt;&lt;/mi-componente&gt;
+  </code>
+  </pre>
+</section>
+
+<section>
+  <h3>Uso de Propiedades del Componente en JSP</h3>
+<small>
+  <p>Las propiedades del componente se pueden establecer dinámicamente en JSP usando expresiones JSP o JSTL. Por ejemplo, para pasar valores dinámicos a nuestro componente:</p>
+</small>
+  <pre data-id="code-animation">
+  <code class="hljs javascript" data-trim data-line-numbers>
+  &lt;mi-componente nombre="${usuario.nombre}" edad="${usuario.edad}"&gt;&lt;/mi-componente&gt;
+  </code>
+  </pre>
+<small>
+  <p>Donde <code>usuario</code> es un objeto en el modelo de solicitud JSP con atributos <code>nombre</code> y <code>edad</code>.</p>
+</small>
+</section>
+
+<section>
+  <h3>Interacción con el Componente desde JSP</h3>
+<small>
+  <p>Además de mostrar datos, podemos interactuar con nuestro componente Lit desde JSP. Por ejemplo, podemos escuchar eventos del componente y actuar en consecuencia:</p>
+</small>
+  <pre data-id="code-animation">
+  <code class="hljs javascript" data-trim data-line-numbers>
+    &lt;script&gt;
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelector('mi-componente').addEventListener('miEvento', function(e) {<br>
+            alert('Evento recibido con datos: ' + e.detail);
+        });
+    });
+    &lt;/script&gt;
+  </code>
+  </pre>
+<small>
+  <p>Esto permite una interactividad rica entre el componente Lit y la lógica de la página JSP.</p>
+</small>
+</section>
+
+<section>
+  <h3>Manejo de Eventos Personalizados en JSP</h3>
+<small>
+  <p>Para reaccionar a eventos personalizados disparados por tu componente Lit en una página JSP, puedes agregar un manejador de eventos directamente dentro de un script en la página:</p>
+</small>
+  <pre data-id="code-animation">
+  <code class="hljs javascript" data-trim data-line-numbers>
+    &lt;script&gt;
+    document.querySelector('mi-componente-lit').addEventListener('mi-evento-personalizado', function(e) {<br>
+        alert('Evento personalizado recibido: ' + e.detail.mensaje);<br>
+    });
+    &lt;/script&gt;
+  </code>
+  </pre>
+<small>
+  <p>Este script se ejecutará cuando se cargue la página JSP, agregando un escuchador para el evento personalizado, permitiéndote realizar acciones como actualizar la interfaz de usuario o enviar datos al servidor en respuesta al evento.</p>
+</small>
+</section>
+
+
+<section>
+  <h3>Delegación de Eventos para Componentes Lit en JSP</h3>
+<small>
+  <p>Maneja múltiples eventos de componentes Lit agregando un único escuchador de eventos a un contenedor padre:</p>
+</small>
+  <pre data-id="code-animation">
+  <code class="hljs javascript" data-trim data-line-numbers>
+    &lt;div id="contenedor-componentes"&gt;<br>
+      &lt;mi-componente-lit id="componente1"&gt;&lt;/mi-componente-lit&gt;<br>
+      &lt;mi-componente-lit id="componente2"&gt;&lt;/mi-componente-lit&gt;<br>
+    &lt;/div&gt;<br>
+    &lt;script&gt;<br>
+      document.getElementById('contenedor-componentes').addEventListener('mi-evento-personalizado', function(e) {<br>
+        if(e.target.id === 'componente1') {<br>
+          // Maneja el evento para el componente 1<br>
+        } else if(e.target.id === 'componente2') {<br>
+          // Maneja el evento para el componente 2<br>
+        }<br>
+      });<br>
+    &lt;/script&gt;
+  </code>
+  </pre>
+</section>
+<section>
+  <p>Este método permite un manejo eficiente y centralizado de eventos, facilitando la interacción con múltiples componentes Lit en tu JSP.</p>
+</section>
+
+<section>
+<h3>Ejercicio de Lit (JSP)</h3>
+<p>
+  En el siguiente<a href="https://angular.io/"> Repositorio de Github</a> encontrarás las intrucciones y ejemplos más detallados de como desarrollar una aplicación usando Eclipse, Servlets y JSP.
+</p>
+</section>
+
+<section>
+<h3>Lit como Módulo en JSP</h3>
+</section>
+
+
+
+<section>
+  <h3>Uso de Lit como Módulo</h3>
+<small>
+  <p>Se puede añadir Lit como script a JSP dentro de un script y usarlo diréctamente con todas sus características.</p>
+</small>
+  <pre data-id="code-animation">
+  <code class="hljs javascript" data-trim data-line-numbers>
+<!-- En tu página JSP/HTML -->
+<script type="module">
+  import {LitElement, html, css} from 'https://unpkg.com/lit?module';
+
+  class MiComponente extends LitElement {
+    static properties = {
+      nombre: {},
+      edad: {type: Number}
+    };
+
+    constructor() {
+      super();
+      this.nombre = 'John Doe';
+      this.edad = 30;
+    }
+
+    render() {
+      return html`
+        <p>Hola, ${this.nombre}, tienes ${this.edad} años.</p>
+        <button @click="${this.mostrarAlerta}">Haz clic</button>
+      `;
+    }
+
+    mostrarAlerta() {
+      alert(`Evento personalizado en acción!`);
+    }
+  }
+  customElements.define('mi-componente', MiComponente);
+</script>
+
+<mi-componente></mi-componente>
+
+  </code>
+  </pre>
+</section>
+<section>
+  <p>Esto te permite combinar la potencia de Lit con la potencia de JSP sin perder lo mejor de ambos mundos.</p>
+  <p>También nos permite aplicar todo lo que aprendimos de Lit en los otros apuntes.</p>
+</section>
+
+<section>
+<h3>Ejercicio de Lit (Como módulo)</h3>
+<p>
+  En el siguiente<a href="https://angular.io/"> Repositorio de Github</a> encontrarás las intrucciones y ejemplos más detallados de como desarrollar una aplicación usando Eclipse, Servlets y JSP.
+</p>
+</section>
+<section>
+  <p>Todos estos conceptos son aplicables en gran medida tambien a React, Angular, Vue y otras librerías y frameworks web.
+     Aunque para las mismas, la cuestión de uso con JSP, resulta bastante más complejo que con Lit.</p>
+</section>
+
+
+
+
+
+
+  </section>
+
+
+      <section data-background="https://i.imgur.com/2ANZmlk.gif">
+        <h2>Fin</h2>
+      </section>
+ 
+
+
+     <!-- Añade tantas secciones como necesites -->
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+		<script src="reveal/dist/reveal.js"></script>
+		<script src="reveal/plugin/notes/notes.js"></script>
+		<script src="reveal/plugin/markdown/markdown.js"></script>
+		<script src="reveal/plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
