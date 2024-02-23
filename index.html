@@ -92,6 +92,14 @@
             <img src="./assets/imgs/import_4.JPG" alt="Abrir Eclipse" style="width: auto; height: 300px;">
         </section>
 
+<section>
+  <h3>Índice de Ejemplos</h3>
+<p>Aquí verás todos los ejercicios y ejemplos relacionados con esta presentación
+  <a href="https://github.com/search?q=owner%3Apcsp-hulafe+Ejercicios&type=repositories" target="_blank"> Repositorio Github</a> o haciendo.
+</p>
+</section>
+
+
 
 </section>
 
@@ -170,40 +178,64 @@
  </section>
 
 <section>
+  <h3>Desplegar HTML a pelo en Tomcat</h3>
+<p>El tutorial de despliegue de aplicaciones (Sólo Frontend) y/o webs estáticas.
+  <a href="https://github.com/pcsp-hulafe/hello_tomcat" target="_blank"> Repositorio Github</a> o haciendo.
+
+  <pre data-id="code-animation">
+  <code class="bash" data-trim>
+    git clone https://github.com/pcsp-hulafe/hello_tomcat
+  </pre></code>
+</p>
+</section>
+
+<section>
   <h3>Preparar la Aplicación Web</h3>
-  <p>Asegúrate de que tu aplicación tenga la estructura adecuada y esté lista para ser empaquetada:</p>
-<small>
-  <ul>
-    <li>Directorio WEB-INF para el descriptor de la aplicación y clases.</li>
-    <li>Archivos JSP, HTML, CSS, y JavaScript en el directorio raíz o subdirectorios organizados.</li>
-  </ul>
-</small>
+  <p>Otra forma de desplegar una aplicación, es usar una que tenga la estructura adecuada y esté lista y empaquetada</p>
 </section>
 
 <section>
   <h3>Empaquetar y Desplegar una Aplicación (WAR)</h3>
 <small>
+  <p>Los pasos importantes a seguir son:</p>
   <ol>
     <li>Empaqueta tu aplicación en un archivo WAR usando la línea de comandos o herramientas como Maven/Gradle o el editor Eclipse.</li>
-    <li>Si quieres uedes usar este repositorio de <a href="https://angular.io/">github</a> preparado para ello.</li>
     <li>Copia el archivo WAR al directorio <code>webapps/</code> de Tomcat.</li>
     <li>Tomcat desplegará automáticamente la aplicación al iniciar o reiniciar.</li>
   </ol>
 </small>
 </section>
 
+
+
 <section>
-  <h3></h3>
-<p>Si quieres hacer una prueba, te puedes descargar un war desde el siguiente 
-  <a href="https://angular.io/"> Repositorio Github</a>.
+  <h3>Desplegar un War a pelo en Tomcat</h3>
+<p>El tutorial de despliegue de aplicaciones empaquetadas como War.
+  <a href="https://github.com/pcsp-hulafe/hello-tomcat-war" target="_blank"> Repositorio Github</a> o haciendo.
+
+  <pre data-id="code-animation">
+  <code class="bash" data-trim>
+    git clone https://github.com/pcsp-hulafe/hello-tomcat-war
+  </pre></code>
 </p>
 </section>
 
 <section>
-<h3>Empaquetar y Desplegar una Aplicación (WAR)</h3>
-<p>Todos los ejercicios propuestos que están en los repositorios de Github tienen una versión empaquetada como war para poder desplegarlos también en el servidor de manera manual y/o con el Manager.</p>
+  <h3>Despliegue de Aplicaciones War con el Manager</h3>
+<p>Un tuto de despliegue de apps usando el manager, ya no necesitas reiniciar Tomcat
+  <a href="https://github.com/pcsp-hulafe/hello-tomcat-war-servlet" target="_blank"> Repositorio Github</a> o haciendo.
+
+  <pre data-id="code-animation">
+  <code class="bash" data-trim>
+    git clone https://github.com/pcsp-hulafe/hello-tomcat-war-servlet
+  </pre></code>
+</p>
 </section>
 
+<section>
+  <h3>Resumen y algo de Contenido Extra</h3>
+</p>
+</section>
 <section>
   <h3>Iniciar Tomcat</h3>
 <small>
@@ -351,10 +383,40 @@
   </ul>
   </small>
 </section>
+
 <section>
-  <h3>Configurando Apache Tomcat en Eclipse</h3>
-  <p>Una vez que tienes Eclipse y Tomcat listos, procede a configurar Tomcat en Eclipse.</p>
+  <h3>Pasos a seguir</h3>
   <small>
+  <ul>
+    <li>Descarga e instala Eclipse desde <a href="https://www.eclipse.org/downloads/packages/">https://www.eclipse.org/downloads/packages/</a>.</li>
+    <li>Descarga Apache Tomcat desde <a href="https://tomcat.apache.org/download-90.cgi">https://tomcat.apache.org/download-90.cgi</a>.</li>
+    <li>Extrae Tomcat en una carpeta de tu elección.</li>
+  </ul>
+  </small>
+</section>
+
+
+<section>
+  <h3>Hello World en Eclipse</h3>
+<p>Instala, configura eclipse en tu computador y despliega una web-app
+  <a href="https://github.com/pcsp-hulafe/hello-eclipse" target="_blank"> Repositorio Github</a> o haciendo.
+
+  <pre data-id="code-animation">
+  <code class="bash" data-trim>
+    git clone https://github.com/pcsp-hulafe/hello-eclipse
+  </pre></code>
+</p>
+</section>
+
+
+<section>
+  <h3>Resumen y otros</h3>
+</section>
+
+<section>
+  <h3>Resumen configurar Apache Tomcat en Eclipse</h3>
+  <small>
+  <p>Una vez que tienes Eclipse y Tomcat listos, procede a configurar Tomcat en Eclipse.</p>
   <ol>
     <li>Abre Eclipse y ve a la vista "Servers". Si no la ves, ábrela desde Window > Show View > Servers.</li>
     <li>Haz clic derecho en el espacio de la vista "Servers" y selecciona New > Server.</li>
@@ -528,19 +590,31 @@
 </small>
 </section>
 
+
 <section>
   <h3>Ejercicios de Servlets (básicos)</h3>
-<p>
-  En el siguiente<a href="https://angular.io/"> Repositorio de Github</a> encontrarás las intrucciones y ejemplos más detallados de como desarrollar una aplicación usando Eclipse y los Servlets.
+<p>Crea y despliega aplicaciones Web usando Servlets
+  <a href="https://github.com/pcsp-hulafe/hello-eclipse-servlets" target="_blank"> Repositorio Github</a> o haciendo.
+
+  <pre data-id="code-animation">
+  <code class="bash" data-trim>
+    git clone https://github.com/pcsp-hulafe/hello-eclipse-servlets
+  </pre></code>
 </p>
 </section>
 
 <section>
-  <h3>Ejercicio de Servlets (login)</h3>
-<p>
-  En el siguiente<a href="https://angular.io/"> Repositorio de Github</a> encontrarás las intrucciones y ejemplos más detallados de como desarrollar un login de usuario usando Eclipse y los Servlets.
+  <h3>Ejercicios de Servlets (login y control de usuarios)</h3>
+<p>Crea un Login y protege tus recursos usando filtros
+  <a href="https://github.com/pcsp-hulafe/eclipse-servlet-login" target="_blank"> Repositorio Github</a> o haciendo.
+
+  <pre data-id="code-animation">
+  <code class="bash" data-trim>
+    git clone https://github.com/pcsp-hulafe/eclipse-servlet-login
+  </pre></code>
 </p>
 </section>
+
 
 
 
@@ -608,16 +682,28 @@
 
 <section>
 <h3>Ejercicios de JSP (básicos)</h3>
-<p>
-  En el siguiente<a href="https://angular.io/"> Repositorio de Github</a> encontrarás las intrucciones y ejemplos más detallados de como desarrollar una aplicación usando Eclipse, Servlets y JSP.
+<p>Crea y despliega aplicaciones Web usando JSP
+  <a href="https://github.com/pcsp-hulafe/hello-eclipse-jsp" target="_blank"> Repositorio Github</a> o haciendo.
+
+  <pre data-id="code-animation">
+  <code class="bash" data-trim>
+    git clone https://github.com/pcsp-hulafe/hello-eclipse-jsp 
+  </pre></code>
 </p>
 </section>
+
 <section>
 <h3>Ejercicio de JSP (login)</h3>
-<p>
-  En el siguiente<a href="https://angular.io/"> Repositorio de Github</a> encontrarás las intrucciones y ejemplos más detallados de como desarrollar una aplicación usando Eclipse, Servlets y JSP.
+<p>Crea un Login y protege tus recursos con JSP
+  <a href="https://github.com/pcsp-hulafe/eclipse-jsp-login" target="_blank"> Repositorio Github</a> o haciendo.
+
+  <pre data-id="code-animation">
+  <code class="bash" data-trim>
+    git clone https://github.com/pcsp-hulafe/eclipse-jsp-login
+  </pre></code>
 </p>
 </section>
+
 
 
   </section>
@@ -669,8 +755,13 @@
 
 <section>
 <h3>Ejercicio de Lit (Tomcat)</h3>
-<p>
-  En el siguiente<a href="https://angular.io/"> Repositorio de Github</a> encontrarás las intrucciones y ejemplos más detallados de como desarrollar una aplicación usando Eclipse, Servlets y JSP.
+<p>Despliega una aplicación Lit en Tomcat
+  <a href="https://github.com/pcsp-hulafe/hello-tomcat-lit" target="_blank"> Repositorio Github</a> o haciendo.
+
+  <pre data-id="code-animation">
+  <code class="bash" data-trim>
+    git clone https://github.com/pcsp-hulafe/hello-tomcat-lit
+  </pre></code>
 </p>
 </section>
 
@@ -691,10 +782,16 @@
 
 <section>
 <h3>Ejercicio de Lit (Eclipse-Tomcat)</h3>
-<p>
-  En el siguiente<a href="https://angular.io/"> Repositorio de Github</a> encontrarás las intrucciones y ejemplos más detallados de como desarrollar una aplicación usando Eclipse, Servlets y JSP.
+<p>Despliega una aplicación Lit en Tomcat
+  <a href="https://github.com/pcsp-hulafe/hello-eclipse-lit" target="_blank"> Repositorio Github</a> o haciendo.
+
+  <pre data-id="code-animation">
+  <code class="bash" data-trim>
+    git clone https://github.com/pcsp-hulafe/hello-eclipse-lit
+  </pre></code>
 </p>
 </section>
+
 
 
 <section>
@@ -816,15 +913,20 @@
 
 <section>
 <h3>Ejercicio de Lit (JSP)</h3>
-<p>
-  En el siguiente<a href="https://angular.io/"> Repositorio de Github</a> encontrarás las intrucciones y ejemplos más detallados de como desarrollar una aplicación usando Eclipse, Servlets y JSP.
+<p>Crea una aplicación Web con Lit y JSP
+  <a href="https://github.com/pcsp-hulafe/hello-eclipse-jsp-lit" target="_blank"> Repositorio Github</a> o haciendo.
+
+  <pre data-id="code-animation">
+  <code class="bash" data-trim>
+    git clone https://github.com/pcsp-hulafe/hello-eclipse-jsp-lit
+  </pre></code>
 </p>
 </section>
+
 
 <section>
 <h3>Lit como Módulo en JSP</h3>
 </section>
-
 
 
 <section>
@@ -876,10 +978,17 @@
 
 <section>
 <h3>Ejercicio de Lit (Como módulo)</h3>
-<p>
-  En el siguiente<a href="https://angular.io/"> Repositorio de Github</a> encontrarás las intrucciones y ejemplos más detallados de como desarrollar una aplicación usando Eclipse, Servlets y JSP.
+<p>Crea una aplicación Web con Lit y JSP pero ahora como módulo
+  <a href="https://github.com/pcsp-hulafe/hello-eclipse-jsp-lit-module" target="_blank"> Repositorio Github</a> o haciendo.
+
+  <pre data-id="code-animation">
+  <code class="bash" data-trim>
+    git clone https://github.com/pcsp-hulafe/hello-eclipse-jsp-lit-module
+  </pre></code>
 </p>
 </section>
+
+
 <section>
   <p>Todos estos conceptos son aplicables en gran medida tambien a React, Angular, Vue y otras librerías y frameworks web.
      Aunque para las mismas, la cuestión de uso con JSP, resulta bastante más complejo que con Lit.</p>
